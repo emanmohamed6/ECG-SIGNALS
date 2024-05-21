@@ -81,7 +81,7 @@ def collect_and_label(dataset):
 df_labeled = collect_and_label('New_data.csv')
 ```
 # Step 3: Balance and Augment the Data
-Use SMOTE to balance and augment the dataset.
+The balance_and_augment function uses SMOTENC to create synthetic samples for the minority class, treating 'filename_hr' as a categorical feature. This results in a dataset with new, synthetic entries that help the model generalize better. Since the function operates only on metadata ('ecg_id', 'filename_hr', and 'label'), the actual ECG signal data remains unchanged. However, it’s important to ensure that synthetic 'filename_hr' entries correctly match the ECG signal data to keep the dataset accurate.
 
 ```python
 from imblearn.over_sampling import SMOTENC

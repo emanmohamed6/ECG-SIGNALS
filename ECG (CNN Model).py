@@ -195,7 +195,7 @@ df_balanced_and_augmented['filtered_lead_1_channel_0'] = filtered_signals
 print(df_balanced_and_augmented)
 
 
-# In[ ]:
+# In[17]:
 
 
 import matplotlib.pyplot as plt
@@ -208,7 +208,7 @@ from keras import regularizers
 from sklearn.model_selection import train_test_split
 
 
-# In[17]:
+# In[18]:
 
 
 def read_signal(record):
@@ -217,7 +217,7 @@ def read_signal(record):
     return signal
 
 
-# In[ ]:
+# In[19]:
 
 
 def preprocess(dat):
@@ -230,7 +230,7 @@ def preprocess(dat):
     return np.array(data_signal)  , np.array(encoded_label)
 
 
-# In[ ]:
+# In[20]:
 
 
 from sklearn.model_selection import train_test_split
@@ -247,7 +247,7 @@ print("Validation size:", len(validation))
 print("Test size:", len(test))
 
 
-# In[ ]:
+# In[21]:
 
 
 print(train.shape)
@@ -255,7 +255,7 @@ print(validation.shape)
 print(test.shape)
 
 
-# In[ ]:
+# In[22]:
 
 
 X_train , y_train = preprocess(train)
@@ -263,7 +263,7 @@ X_valid , y_valid = preprocess(validation)
 X_test  , y_test  = preprocess(test) 
 
 
-# In[ ]:
+# In[23]:
 
 
 print(X_train.shape)
@@ -274,7 +274,7 @@ print(X_test.shape)
 print(y_test.shape)
 
 
-# In[ ]:
+# In[24]:
 
 
 # Reshape input data to add the timestep dimension
@@ -283,7 +283,7 @@ X_valid = X_valid.reshape(X_valid.shape[0], X_valid.shape[1], 1)
 X_test = X_test.reshape(X_test.shape[0], X_test.shape[1], 1)
 
 
-# In[ ]:
+# In[25]:
 
 
 import keras
@@ -328,7 +328,7 @@ y_pred_proba = model.predict(X_test)
 
 
 
-# In[ ]:
+# In[26]:
 
 
 from sklearn.metrics import confusion_matrix, precision_score, f1_score
@@ -393,7 +393,7 @@ print("Sensitivity (Recall) with Optimal Threshold:", sensitivity_optimal)
 print("Specificity with Optimal Threshold:", specificity_optimal)
 
 
-# In[ ]:
+# In[27]:
 
 
 from sklearn.metrics import roc_curve, auc
@@ -419,7 +419,7 @@ plt.legend()
 plt.show()
 
 
-# In[ ]:
+# In[28]:
 
 
 import itertools  # Add this import for itertools
